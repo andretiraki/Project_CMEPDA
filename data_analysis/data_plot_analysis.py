@@ -5,10 +5,12 @@ In this module we analyze our dataset and make useful plot
 from load_info_data import load_info_data
 from plot_image import *
 import seaborn as sns
-PATH= 'lending_club_loan_two.csv'
+import time
+PATH= '..\lending_club_loan_two.csv'
 
 if __name__ == '__main__':
     #Import dataset and print it's info
+    start = time.time()
     data = load_info_data(PATH)
     #Visualizing loan payoff and chargeoff
     countpl(column = 'loan_status' , data = data, save = 1, name = '(1)pf_vs_co.pdf')
@@ -57,6 +59,10 @@ if __name__ == '__main__':
     #Visualize relationship between  purprose and loan_status
     countpl(column = 'purpose', data = data, hue= 'loan_status', save = 1, \
             name = '(12)purpose.pdf')
+    mins = (time.time()-start)//60
+    sec = (time.time()-start) % 60
+    data.info()
+    print(f"Time occured: {mins} min {sec:.2f} sec\n")
     
 
     
