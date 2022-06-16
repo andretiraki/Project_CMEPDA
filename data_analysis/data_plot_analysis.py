@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-In this module we analyze our dataset and make useful plot
+In this first module  of data analysis we analyze our dataset and make useful plot
 """
 from load_info_data import load_info_data
 from plot_image import *
