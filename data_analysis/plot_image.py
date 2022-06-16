@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-The main of this module is printing and save (if you want) plot
+The main of this module is setting and save (if you want) plot
 """
 
 import matplotlib.pyplot as plt
