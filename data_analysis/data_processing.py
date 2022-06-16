@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
 """
-In this module we prepare our dataset for machine learning tools
+In this second module of data analysis we prepare our dataset for machine learning tools
 """
 from load_info_data import load_info_data
 import time
 import numpy as np
 import pandas as pd
 PATH= '..\lending_club_loan_two.csv'
-
+SAVE = True
 def fill_in_mort_acc(total_acc, mort_acc):
     '''
     This function replace Nan values of feature mort_acc with mean value of total_acc
@@ -144,7 +144,8 @@ if __name__ == '__main__':
     Let'save our dataset
     '''
     data = data.drop(dropped_feature, axis=1)
-    data.to_csv('data_analyzed.csv',index = False)
+    if SAVE == True: 
+        data.to_csv('data_analyzed.csv',index = False)
     mins = (time.time()-start)//60
     sec = (time.time()-start) % 60
     data.info()
