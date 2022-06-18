@@ -26,4 +26,3 @@ def load_info_data(data_path):
     data.info()
     print(f"Time to load the dataset is: {mins} min {sec:.2f} sec\n")
     return data
-    
