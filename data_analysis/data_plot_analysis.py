@@ -62,7 +62,7 @@ if __name__ == '__main__':
     mins = (time.time()-start)//60
     sec = (time.time()-start) % 60
     data.info()
-    print(f"Time occured: {mins} min {sec:.2f} sec\n")
+    print(f"Elapsed time: {mins} min {sec:.2f} sec\n")
     
 
     
