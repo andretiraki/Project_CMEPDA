@@ -34,7 +34,7 @@ def countpl(column , data, save: int = 0, name = 'countplot.pdf', order = None, 
 
     '''
     #make sure value of save is 0 or 1
-    if (type(save) != int or save != 1 and 0): 
+    if save != 0 and save != 1: 
         raise ValueError('save must be 1 or 0')
     #Create folder Figure if it does not exist
     if os.path.isdir('Figures') == False:
@@ -71,7 +71,7 @@ def barpl(column_co, column_fp, save: int = 0, name = 'barplot.pdf'):
 
     '''
     #make sure value of save is 0 or 1
-    if (type(save) != int or save != 1 and 0): 
+    if save != 0 and save != 1: 
         raise ValueError('save must be 1 or 0') 
     #Create folder Figure if it does not exist
     if os.path.isdir('Figures') == False:
@@ -113,7 +113,7 @@ def histpl(column, data, save: int = 0, name = 'histpl.pdf', hue = None, binwidt
 
         '''
         #make sure value of save is 0 or 1
-        if (type(save) != int or save != 1 and 0): 
+        if save != 0 and save != 1:  
             raise ValueError('save must be 1 or 0')
         #Create folder Figure if it does not exist
         if os.path.isdir('Figures') == False:
@@ -146,7 +146,7 @@ def corr_matrix(data, save: int = 0, name = 'corr_matrix.pdf'):
 
     '''
     #make sure value of save is 0 or 1
-    if (type(save) != int or save != 1 and 0):
+    if save != 0 and save != 1: 
         raise ValueError('save must be 1 or 0')
     #Create folder Figure if it does not exist
     if os.path.isdir('Figures') == False:
