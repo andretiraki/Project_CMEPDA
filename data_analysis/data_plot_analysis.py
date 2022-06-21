@@ -1,12 +1,17 @@
 # -*- coding: utf-8 -*-
+#pylint: disable=line-too-long
+#pylint: disable=wildcard-import
+#pylint: disable=unused-import
+#pylint: disable=unused-wildcard-import
+
 """
 In this first module  of data analysis we analyze our dataset and make useful plot
 """
+import time
+import seaborn as sns
 from load_info_data import load_info_data
 from plot_image import *
-import seaborn as sns
-import time
-PATH= '..\lending_club_loan_two.csv'
+PATH =  r'..\lending_club_loan_two.csv'
 
 if __name__ == '__main__':
     #Import dataset and print it's info
@@ -28,8 +33,10 @@ if __name__ == '__main__':
     sorted_sub_grade = sorted(data['sub_grade'].unique())
     countpl(column = 'sub_grade', data = data, hue= 'loan_status',  save = 0, \
             name = '(5)sub_grade.pdf', order = sorted_sub_grade)
-    sub_grade_co = data[data['loan_status'] == "Charged Off"].groupby("sub_grade").count()['loan_status']
-    sub_grade_fp = data[data['loan_status'] == 'Fully Paid'].groupby('sub_grade').count()['loan_status']
+    sub_grade_co = data[data['loan_status'] ==
+                        "Charged Off"].groupby("sub_grade").count()['loan_status']
+    sub_grade_fp = data[data['loan_status'] ==
+                        'Fully Paid'].groupby('sub_grade').count()['loan_status']
     #They give more informations than grade
     barpl(sub_grade_co, sub_grade_fp,  save = 0, name = '(6)sub_grade_bar.pdf')
     #Visualize relationship between  loan_status and verification_status
@@ -63,11 +70,4 @@ if __name__ == '__main__':
     sec = (time.time()-start) % 60
     data.info()
     print(f"Elapsed time: {mins} min {sec:.2f} sec\n")
-    
-
-    
-
-
-    
-
     
