@@ -2,8 +2,9 @@
 """
 The main of this module is loading our datafrane and print its info
 """
-import pandas as pd
 import time
+import pandas as pd
+
 
 
 def load_info_data(data_path):
